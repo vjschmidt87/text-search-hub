@@ -1,0 +1,89 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: v.$nav-height;
+  background: v.$color-bg-card;
+  border-bottom: 1px solid v.$color-border;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.nav__inner {
+  @include m.flex(row, center, space-between);
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 v.$space-xl;
+
+  @include m.mobile {
+    padding: 0 v.$space-lg;
+  }
+}
+
+.nav__logo {
+  @include m.flex(row, center, flex-start, v.$space-sm);
+  font-size: v.$text-lg;
+  font-weight: 700;
+  color: v.$color-text-primary;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+
+  &:hover { color: v.$color-accent; }
+}
+
+.nav__logo-icon {
+  color: v.$color-accent;
+  font-size: v.$text-xl;
+}
+
+.nav__logo-text {
+  @include m.mobile { display: none; }
+}
+
+.nav__links {
+  @include m.flex(row, center, center, v.$space-xs);
+}
+
+.nav__link {
+  padding: v.$space-sm v.$space-md;
+  border-radius: v.$radius-md;
+  font-size: v.$text-sm;
+  font-weight: 500;
+  color: v.$color-text-secondary;
+  text-decoration: none;
+  transition: color 150ms ease, background 150ms ease;
+
+  &:hover {
+    color: v.$color-text-primary;
+    background: v.$color-bg-elevated;
+  }
+
+  &.active {
+    color: v.$color-accent;
+    background: rgba(91, 124, 246, 0.12);
+  }
+}
+
+.nav__lang-toggle {
+  padding: v.$space-xs v.$space-md;
+  background: v.$color-bg-elevated;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-full;
+  color: v.$color-text-secondary;
+  font-size: v.$text-xs;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 150ms ease;
+
+  &:hover {
+    background: v.$color-accent;
+    border-color: v.$color-accent;
+    color: #fff;
+  }
+}

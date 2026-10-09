@@ -1,0 +1,22 @@
+<div class="result-card">
+  <div class="result-card__header">
+    <div class="result-card__meta">
+      <span class="source-badge" [class]="sourceCssClass">{{ sourceLabel }}</span>
+      @if (result.format) {
+        <span class="format-badge">{{ result.format.toUpperCase() }}</span>
+      }
+    </div>
+    <h3 class="result-card__title">{{ result.title }}</h3>
+    <p class="result-card__author">
+      {{ result.author }}@if (result.year) { <span class="result-card__year"> · {{ result.year }}</span> }
+    </p>
+  </div>
+
+  @if (result.description) {
+    <p class="result-card__desc">{{ result.description }}</p>
+  }
+
+  <div class="result-card__footer">
+    <app-download-buttons [downloads]="result.downloads" />
+  </div>
+</div>

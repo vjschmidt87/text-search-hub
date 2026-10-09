@@ -1,0 +1,32 @@
+<div class="page">
+  <div class="page__header">
+    <h1 class="page__title">{{ tr.t('academic.title') }}</h1>
+    <p class="page__subtitle">{{ tr.t('academic.subtitle') }}</p>
+  </div>
+
+  <div class="search-section">
+    <app-search-bar
+      [placeholder]="tr.t('academic.placeholder')"
+      [loading]="loading()"
+      [submitLabel]="tr.t('common.search')"
+      (search)="onSearch($event)"
+    />
+  </div>
+
+  @if (loading()) {
+    <div class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>{{ tr.t('common.loading') }}</p>
+    </div>
+  } @else if (searched()) {
+    @if (results().length === 0) {
+      <p class="no-results">{{ tr.t('result.noResults') }}</p>
+    } @else {
+      <div class="results-grid">
+        @for (result of results(); track result.title + result.source) {
+          <app-result-card [result]="result" />
+        }
+      </div>
+    }
+  }
+</div>

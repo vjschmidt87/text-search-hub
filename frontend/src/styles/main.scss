@@ -1,0 +1,28 @@
+@use 'variables' as v;
+@use 'base';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.page {
+  padding: v.$space-xl v.$space-lg;
+  max-width: v.$content-max-width;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: v.$space-lg v.$space-md;
+  }
+
+  &__header {
+    margin-bottom: v.$space-xl;
+  }
+
+  &__title {
+    font-size: v.$text-2xl;
+    font-weight: 700;
+    margin-bottom: v.$space-sm;
+  }
+
+  &__subtitle {
+    color: v.$color-text-secondary;
+  }
+}

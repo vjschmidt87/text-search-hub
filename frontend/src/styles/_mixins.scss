@@ -1,0 +1,72 @@
+@use 'variables' as v;
+
+@mixin flex($dir: row, $align: center, $justify: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+  @if $gap != 0 { gap: $gap; }
+}
+
+@mixin card {
+  background: v.$color-bg-card;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-sm;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-sm;
+  padding: v.$space-sm v.$space-lg;
+  border: none;
+  border-radius: v.$radius-md;
+  font-size: v.$text-sm;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease, transform 100ms ease, opacity 150ms ease;
+  text-decoration: none;
+  &:active { transform: translateY(1px); }
+  &:disabled, &.disabled { cursor: not-allowed; opacity: 0.4; pointer-events: none; }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: v.$color-accent;
+  color: #fff;
+  &:hover { background: v.$color-accent-hover; }
+}
+
+@mixin button-ghost {
+  @include button-base;
+  background: transparent;
+  color: v.$color-text-secondary;
+  border: 1px solid v.$color-border;
+  &:hover { background: v.$color-bg-elevated; color: v.$color-text-primary; }
+}
+
+@mixin input-base {
+  background: v.$color-bg-elevated;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  color: v.$color-text-primary;
+  font-size: v.$text-base;
+  padding: v.$space-sm v.$space-lg;
+  transition: border-color 150ms ease;
+  outline: none;
+  width: 100%;
+  &::placeholder { color: v.$color-text-muted; }
+  &:focus { border-color: v.$color-accent; }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: v.$color-border; border-radius: 3px; }
+}

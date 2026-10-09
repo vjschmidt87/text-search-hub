@@ -1,0 +1,25 @@
+<div class="dl-buttons">
+  @if (downloads.en) {
+    <a class="dl-btn dl-btn--en" [href]="downloads.en" target="_blank" rel="noopener">
+      {{ tr.t('result.download.en') }}
+    </a>
+  } @else {
+    <span class="dl-btn dl-btn--disabled">{{ tr.t('result.download.en') }}</span>
+  }
+
+  @if (downloads.ptPt) {
+    <a class="dl-btn dl-btn--ptpt" [href]="downloads.ptPt" target="_blank" rel="noopener">
+      {{ tr.t('result.download.ptpt') }}
+    </a>
+  } @else {
+    <span class="dl-btn dl-btn--disabled">{{ tr.t('result.download.ptpt') }}</span>
+  }
+
+  @if (downloads.ptBr) {
+    <a class="dl-btn dl-btn--ptbr" [href]="downloads.ptBr" target="_blank" rel="noopener">
+      {{ tr.t('result.download.ptbr') }}
+    </a>
+  } @else {
+    <span class="dl-btn dl-btn--disabled">{{ tr.t('result.download.ptbr') }}</span>
+  }
+</div>

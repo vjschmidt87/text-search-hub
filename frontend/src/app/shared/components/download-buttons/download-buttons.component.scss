@@ -1,0 +1,47 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.dl-buttons {
+  @include m.flex(row, center, flex-start, v.$space-sm);
+  flex-wrap: wrap;
+}
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: v.$radius-sm;
+  font-size: v.$text-xs;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: opacity 150ms ease, transform 100ms ease;
+
+  &:active { transform: translateY(1px); }
+}
+
+.dl-btn--en {
+  background: v.$color-btn-en;
+  color: #fff;
+  &:hover { opacity: 0.85; }
+}
+
+.dl-btn--ptpt {
+  background: v.$color-btn-ptpt;
+  color: #fff;
+  &:hover { opacity: 0.85; }
+}
+
+.dl-btn--ptbr {
+  background: v.$color-btn-ptbr;
+  color: #fff;
+  &:hover { opacity: 0.85; }
+}
+
+.dl-btn--disabled {
+  background: v.$color-btn-disabled;
+  color: v.$color-text-muted;
+  opacity: 0.5;
+  cursor: not-allowed;
+}

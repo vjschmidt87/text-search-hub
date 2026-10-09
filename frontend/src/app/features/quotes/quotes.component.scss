@@ -1,0 +1,142 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.quote-input-section {
+  @include m.flex(column, stretch, flex-start, v.$space-md);
+  max-width: 720px;
+  margin-bottom: v.$space-2xl;
+}
+
+.quote-textarea {
+  @include m.input-base;
+  resize: vertical;
+  min-height: 120px;
+  padding: v.$space-md v.$space-lg;
+  line-height: 1.6;
+}
+
+.quote-hint {
+  font-size: v.$text-xs;
+  color: v.$color-text-muted;
+}
+
+.search-btn {
+  @include m.button-primary;
+  @include m.flex(row, center, center, v.$space-sm);
+  height: 48px;
+  align-self: flex-start;
+  min-width: 160px;
+
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.not-found {
+  @include m.card;
+  padding: v.$space-2xl;
+  text-align: center;
+  color: v.$color-text-muted;
+  font-size: v.$text-lg;
+}
+
+.quote-result {
+  @include m.card;
+  @include m.flex(column, stretch, flex-start, v.$space-xl);
+  padding: v.$space-2xl;
+  max-width: 720px;
+}
+
+.quote-result__quote {
+  position: relative;
+  padding: v.$space-lg v.$space-2xl;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  color: v.$color-accent;
+  opacity: 0.4;
+  font-family: Georgia, serif;
+  line-height: 0;
+  position: absolute;
+
+  &:first-child { top: v.$space-sm; left: 0; }
+  &:last-child { bottom: calc(-1 * v.$space-sm); right: 0; }
+}
+
+.quote-result__quote p {
+  font-size: v.$text-lg;
+  line-height: 1.7;
+  color: v.$color-text-primary;
+  font-style: italic;
+}
+
+.quote-result__attribution {
+  @include m.flex(row, baseline, flex-start, v.$space-sm);
+  flex-wrap: wrap;
+  font-size: v.$text-base;
+}
+
+.attribution-by { color: v.$color-text-muted; }
+.attribution-author { font-size: v.$text-xl; font-weight: 700; color: v.$color-text-primary; }
+.attribution-separator { color: v.$color-text-muted; }
+.attribution-from { color: v.$color-text-muted; }
+.attribution-work { color: v.$color-text-secondary; font-style: italic; }
+
+.quote-result__meta {
+  @include m.flex(row, center, flex-start, v.$space-xl);
+  flex-wrap: wrap;
+  padding-top: v.$space-md;
+  border-top: 1px solid v.$color-border;
+}
+
+.meta-item {
+  @include m.flex(row, center, flex-start, v.$space-sm);
+  font-size: v.$text-sm;
+}
+
+.meta-label { color: v.$color-text-muted; }
+
+.source-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: v.$radius-full;
+  font-size: v.$text-xs;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.source-badge--quotable  { background: rgba(29, 78, 216, 0.2); color: #93c5fd; }
+.source-badge--wikiquote { background: rgba(67, 56, 202, 0.2); color: #a5b4fc; }
+
+.confidence-bar {
+  display: inline-block;
+  width: 80px;
+  height: 6px;
+  background: v.$color-bg-elevated;
+  border-radius: v.$radius-full;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  display: block;
+  height: 100%;
+  background: v.$color-accent;
+  border-radius: v.$radius-full;
+  transition: width 400ms ease;
+}
+
+.confidence-pct {
+  color: v.$color-text-secondary;
+  font-weight: 600;
+}

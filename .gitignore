@@ -1,0 +1,37 @@
+# Maven / Spring Boot
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.class
+backend/.mvn/wrapper/maven-wrapper.jar
+!backend/.mvn/wrapper/maven-wrapper.properties
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/*.js.map
+
+# Certificates / secrets
+**/*.pem
+**/*.p12
+**/*.jks
+**/*.key
+**/*.crt
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+
+# Docker
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/

@@ -1,0 +1,42 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.search-bar {
+  @include m.flex(row, stretch, flex-start);
+  gap: v.$space-sm;
+  width: 100%;
+}
+
+.search-bar__input {
+  @include m.input-base;
+  flex: 1;
+  height: 48px;
+  font-size: v.$text-base;
+}
+
+.search-bar__btn {
+  @include m.button-primary;
+  height: 48px;
+  min-width: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.search-bar__spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

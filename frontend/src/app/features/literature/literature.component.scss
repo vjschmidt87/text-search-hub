@@ -1,0 +1,70 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.search-section {
+  @include m.flex(column, stretch, flex-start, v.$space-md);
+  margin-bottom: v.$space-2xl;
+}
+
+.type-toggle {
+  @include m.flex(row, center, flex-start, v.$space-sm);
+}
+
+.type-btn {
+  padding: v.$space-sm v.$space-lg;
+  border-radius: v.$radius-full;
+  border: 1px solid v.$color-border;
+  background: transparent;
+  color: v.$color-text-secondary;
+  font-size: v.$text-sm;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+
+  &:hover {
+    background: v.$color-bg-elevated;
+    color: v.$color-text-primary;
+  }
+
+  &.active {
+    background: v.$color-accent;
+    border-color: v.$color-accent;
+    color: #fff;
+  }
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: v.$space-lg;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.no-results {
+  color: v.$color-text-muted;
+  text-align: center;
+  padding: v.$space-3xl 0;
+  font-size: v.$text-lg;
+}
+
+.loading-state {
+  @include m.flex(column, center, center, v.$space-md);
+  padding: v.$space-3xl 0;
+  color: v.$color-text-muted;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid v.$color-border;
+  border-top-color: v.$color-accent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,24 @@
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" routerLink="/literature">
+      <span class="nav__logo-icon">◈</span>
+      <span class="nav__logo-text">text-search-hub</span>
+    </a>
+
+    <div class="nav__links">
+      <a class="nav__link" routerLink="/literature" routerLinkActive="active">
+        {{ tr.t('nav.literature') }}
+      </a>
+      <a class="nav__link" routerLink="/academic" routerLinkActive="active">
+        {{ tr.t('nav.academic') }}
+      </a>
+      <a class="nav__link" routerLink="/quotes" routerLinkActive="active">
+        {{ tr.t('nav.quotes') }}
+      </a>
+    </div>
+
+    <button class="nav__lang-toggle" (click)="toggleLanguage()">
+      {{ tr.t('nav.langToggle') }}
+    </button>
+  </div>
+</nav>

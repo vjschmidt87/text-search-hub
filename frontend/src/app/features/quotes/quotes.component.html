@@ -1,0 +1,71 @@
+<div class="page">
+  <div class="page__header">
+    <h1 class="page__title">{{ tr.t('quotes.title') }}</h1>
+    <p class="page__subtitle">{{ tr.t('quotes.subtitle') }}</p>
+  </div>
+
+  <div class="quote-input-section">
+    <textarea
+      class="quote-textarea"
+      [placeholder]="tr.t('quotes.placeholder')"
+      [ngModel]="quoteInput()"
+      (ngModelChange)="quoteInput.set($event)"
+      (keydown)="onKeydown($event)"
+      rows="4"
+      [disabled]="loading()"
+    ></textarea>
+    <p class="quote-hint">Ctrl+Enter to search</p>
+    <button
+      class="search-btn"
+      (click)="onSearch()"
+      [disabled]="loading() || !quoteInput().trim()"
+    >
+      @if (loading()) {
+        <span class="spinner"></span>
+        {{ tr.t('common.loading') }}
+      } @else {
+        {{ tr.t('quotes.search') }}
+      }
+    </button>
+  </div>
+
+  @if (searched()) {
+    @if (notFound() || !result()) {
+      <div class="not-found">
+        <p>{{ tr.t('quotes.notFound') }}</p>
+      </div>
+    } @else {
+      <div class="quote-result">
+        <div class="quote-result__quote">
+          <span class="quote-mark">"</span>
+          <p>{{ result()!.quote }}</p>
+          <span class="quote-mark">"</span>
+        </div>
+
+        <div class="quote-result__attribution">
+          <span class="attribution-by">{{ tr.t('quotes.by') }}</span>
+          <span class="attribution-author">{{ result()!.author }}</span>
+          @if (result()!.work) {
+            <span class="attribution-separator">·</span>
+            <span class="attribution-from">{{ tr.t('quotes.from') }}</span>
+            <em class="attribution-work">{{ result()!.work }}</em>
+          }
+        </div>
+
+        <div class="quote-result__meta">
+          <span class="meta-item">
+            <span class="meta-label">{{ tr.t('quotes.source') }}:</span>
+            <span class="source-badge" [class]="'source-badge--' + result()!.source">{{ sourceLabel }}</span>
+          </span>
+          <span class="meta-item">
+            <span class="meta-label">{{ tr.t('quotes.confidence') }}:</span>
+            <span class="confidence-bar">
+              <span class="confidence-fill" [style.width]="confidencePct"></span>
+            </span>
+            <span class="confidence-pct">{{ confidencePct }}</span>
+          </span>
+        </div>
+      </div>
+    }
+  }
+</div>

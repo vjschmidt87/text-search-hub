@@ -1,0 +1,67 @@
+// Colors
+$color-bg-base:       #0f1117;
+$color-bg-card:       #1a1d27;
+$color-bg-elevated:   #222535;
+$color-border:        #2d3148;
+$color-border-light:  #3d4168;
+
+$color-text-primary:  #f0f2ff;
+$color-text-secondary:#a0a8c8;
+$color-text-muted:    #606880;
+
+$color-accent:        #5b7cf6;
+$color-accent-hover:  #7090ff;
+$color-success:       #4caf86;
+$color-warning:       #f5a623;
+$color-danger:        #f75e5e;
+
+// Download button language colors
+$color-btn-en:        #2563eb;
+$color-btn-ptpt:      #16a34a;
+$color-btn-ptbr:      #15803d;
+$color-btn-disabled:  #374151;
+
+// Source badge colors
+$color-source-gutenberg:      #b45309;
+$color-source-openlibrary:    #0369a1;
+$color-source-archive:        #7c3aed;
+$color-source-arxiv:          #b91c1c;
+$color-source-semanticscholar:#0f766e;
+$color-source-quotable:       #1d4ed8;
+$color-source-wikiquote:      #4338ca;
+
+// Spacing
+$space-xs:  4px;
+$space-sm:  8px;
+$space-md:  12px;
+$space-lg:  16px;
+$space-xl:  24px;
+$space-2xl: 32px;
+$space-3xl: 48px;
+
+// Typography
+$text-xs:   0.75rem;
+$text-sm:   0.875rem;
+$text-base: 1rem;
+$text-lg:   1.125rem;
+$text-xl:   1.25rem;
+$text-2xl:  1.5rem;
+$text-3xl:  2rem;
+
+$font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Radius
+$radius-sm:   6px;
+$radius-md:   10px;
+$radius-lg:   14px;
+$radius-xl:   20px;
+$radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+// Layout
+$nav-height:         60px;
+$content-max-width:  960px;

@@ -1,0 +1,82 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.result-card {
+  @include m.card;
+  padding: v.$space-lg;
+  @include m.flex(column, stretch, flex-start, v.$space-md);
+  transition: border-color 150ms ease, transform 100ms ease;
+
+  &:hover {
+    border-color: v.$color-border-light;
+    transform: translateY(-1px);
+  }
+}
+
+.result-card__header {
+  @include m.flex(column, flex-start, flex-start, v.$space-sm);
+}
+
+.result-card__meta {
+  @include m.flex(row, center, flex-start, v.$space-sm);
+}
+
+.source-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: v.$radius-full;
+  font-size: v.$text-xs;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.source-badge--gutenberg       { background: rgba(180, 83, 9, 0.2);    color: #f59e0b; }
+.source-badge--openlibrary     { background: rgba(3, 105, 161, 0.2);   color: #38bdf8; }
+.source-badge--archive         { background: rgba(124, 58, 237, 0.2);  color: #a78bfa; }
+.source-badge--standardebooks  { background: rgba(5, 150, 105, 0.2);   color: #6ee7b7; }
+.source-badge--arxiv           { background: rgba(185, 28, 28, 0.2);   color: #fca5a5; }
+.source-badge--semanticscholar { background: rgba(15, 118, 110, 0.2);  color: #34d399; }
+
+.format-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: v.$radius-sm;
+  font-size: v.$text-xs;
+  font-weight: 600;
+  background: v.$color-bg-elevated;
+  color: v.$color-text-muted;
+  border: 1px solid v.$color-border;
+}
+
+.result-card__title {
+  font-size: v.$text-base;
+  font-weight: 700;
+  color: v.$color-text-primary;
+  line-height: 1.4;
+}
+
+.result-card__author {
+  font-size: v.$text-sm;
+  color: v.$color-text-secondary;
+}
+
+.result-card__year {
+  color: v.$color-text-muted;
+}
+
+.result-card__desc {
+  font-size: v.$text-sm;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.result-card__footer {
+  margin-top: v.$space-xs;
+  padding-top: v.$space-md;
+  border-top: 1px solid v.$color-border;
+}

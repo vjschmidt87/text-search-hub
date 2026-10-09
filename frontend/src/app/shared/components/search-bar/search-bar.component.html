@@ -1,0 +1,19 @@
+<form class="search-bar" (submit)="onSubmit($event)">
+  <input
+    class="search-bar__input"
+    type="text"
+    [placeholder]="placeholder"
+    [ngModel]="query()"
+    (ngModelChange)="query.set($event)"
+    (keydown)="onKeydown($event)"
+    [disabled]="loading"
+    autocomplete="off"
+  />
+  <button class="search-bar__btn" type="submit" [disabled]="loading || !query().trim()">
+    @if (loading) {
+      <span class="search-bar__spinner"></span>
+    } @else {
+      {{ submitLabel }}
+    }
+  </button>
+</form>

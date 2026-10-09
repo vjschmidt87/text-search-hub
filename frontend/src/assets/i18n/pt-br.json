@@ -1,0 +1,42 @@
+{
+  "nav.literature": "Literatura",
+  "nav.academic": "Acadêmico",
+  "nav.quotes": "Citações",
+  "nav.langToggle": "EN",
+
+  "literature.title": "Busca de Literatura",
+  "literature.subtitle": "Encontre livros, PDFs e edições digitais em bibliotecas gratuitas",
+  "literature.placeholder": "Buscar por título ou autor...",
+  "literature.typeBook": "Título do Livro",
+  "literature.typeAuthor": "Autor",
+
+  "academic.title": "Busca Acadêmica",
+  "academic.subtitle": "Encontre artigos, teses e livros técnicos em fontes de acesso aberto",
+  "academic.placeholder": "Buscar artigos, teses, livros técnicos...",
+
+  "quotes.title": "Identificador de Citações",
+  "quotes.subtitle": "Cole uma citação e tentaremos encontrar sua fonte exata",
+  "quotes.placeholder": "Cole uma citação aqui...",
+  "quotes.search": "Encontrar Fonte",
+  "quotes.notFound": "Nenhuma fonte encontrada para esta citação.",
+  "quotes.by": "por",
+  "quotes.from": "de",
+  "quotes.confidence": "Confiança",
+  "quotes.source": "Fonte",
+
+  "result.download.en": "EN",
+  "result.download.ptpt": "PT-PT",
+  "result.download.ptbr": "PT-BR",
+  "result.noResults": "Nenhum resultado encontrado. Tente uma busca diferente.",
+  "result.source.gutenberg": "Gutenberg",
+  "result.source.openlibrary": "Open Library",
+  "result.source.archive": "Archive.org",
+  "result.source.standardebooks": "Standard Ebooks",
+  "result.source.arxiv": "arXiv",
+  "result.source.semanticscholar": "Semantic Scholar",
+  "result.source.quotable": "Quotable",
+  "result.source.wikiquote": "WikiQuote",
+
+  "common.loading": "Buscando...",
+  "common.search": "Buscar"
+}

@@ -1,0 +1,42 @@
+{
+  "nav.literature": "Literature",
+  "nav.academic": "Academic",
+  "nav.quotes": "Quotes",
+  "nav.langToggle": "PT-BR",
+
+  "literature.title": "Literature Search",
+  "literature.subtitle": "Find books, PDFs and digital editions from free libraries",
+  "literature.placeholder": "Search by book title or author...",
+  "literature.typeBook": "Book Title",
+  "literature.typeAuthor": "Author",
+
+  "academic.title": "Academic Search",
+  "academic.subtitle": "Find papers, theses and technical books from open-access sources",
+  "academic.placeholder": "Search papers, theses, technical books...",
+
+  "quotes.title": "Quote Source Finder",
+  "quotes.subtitle": "Paste a quote and we'll try to find its exact source",
+  "quotes.placeholder": "Paste a quote here...",
+  "quotes.search": "Find Source",
+  "quotes.notFound": "No source found for this quote.",
+  "quotes.by": "by",
+  "quotes.from": "from",
+  "quotes.confidence": "Confidence",
+  "quotes.source": "Source",
+
+  "result.download.en": "EN",
+  "result.download.ptpt": "PT-PT",
+  "result.download.ptbr": "PT-BR",
+  "result.noResults": "No results found. Try a different search.",
+  "result.source.gutenberg": "Gutenberg",
+  "result.source.openlibrary": "Open Library",
+  "result.source.archive": "Archive.org",
+  "result.source.standardebooks": "Standard Ebooks",
+  "result.source.arxiv": "arXiv",
+  "result.source.semanticscholar": "Semantic Scholar",
+  "result.source.quotable": "Quotable",
+  "result.source.wikiquote": "WikiQuote",
+
+  "common.loading": "Searching...",
+  "common.search": "Search"
+}
